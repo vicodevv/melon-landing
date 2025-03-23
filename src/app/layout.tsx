@@ -1,16 +1,42 @@
+import localFont from 'next/font/local';
 import { Karla } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
-import localFont from 'next/font/local';
 
-const recoleta = localFont({
-  variable: '--font-recoleta',
+const mabryPro = localFont({
+  variable: '--font-mabry',
   src: [
     {
-      path: '../../public/fonts/Alliance.otf',
+      path: '../../public/fonts/mabry-pro/MabryPro-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/mabry-pro/MabryPro-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
+    {
+      path: '../../public/fonts/mabry-pro/MabryPro-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/mabry-pro/MabryPro-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/mabry-pro/MabryPro-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/mabry-pro/MabryPro-Italic.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+
   ],
 });
 
@@ -28,12 +54,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${karla.variable} ${recoleta.variable} antialiased`}
-        style={{
-          fontFamily: 'Gelasio-italic, Arial, sans-serif, GeneralSans-Regular',
-        }}
-      >
+      <body className={`${karla.variable} ${mabryPro.variable} antialiased`}>
         {children}
       </body>
     </html>
