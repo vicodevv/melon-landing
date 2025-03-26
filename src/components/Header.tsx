@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         </Link>
         <Link
           href="/demo"
-          className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+          className="rounded-md bg-[#5B94E5] px-4 py-2 text-sm font-medium text-white hover:bg-[#4A7ABF]"
         >
           Book a demo
         </Link>

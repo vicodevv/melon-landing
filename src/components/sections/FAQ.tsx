@@ -26,7 +26,7 @@ import {
     ];
   
     return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Header Section */}
         <div className="mb-8">
           <p className="text-gray-500 mb-2">FAQ Melon</p>

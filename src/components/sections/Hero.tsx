@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
               <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                 <Link
                   href="/demo"
-                  className="rounded-md bg-gray-900 px-6 py-3 text-base font-medium text-white hover:bg-gray-800"
+                  className="rounded-md bg-[#5B94E5] px-6 py-3 text-base font-medium text-white hover:bg-[#4A7ABF]"
                 >
                   Book a demo
                 </Link>

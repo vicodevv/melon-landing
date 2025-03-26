@@ -6,6 +6,7 @@ import AppFeature from '@/components/sections/AppFeature';
 import WhatWeDo from '@/components/sections/WhatWeDo';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
+import Solutions from '@/components/sections/Solutions';
 // import GridBackground from '@/components/GridBackground';
 
 const Page = () => {
@@ -16,7 +17,7 @@ const Page = () => {
           <Hero />
           <AppFeature />
           <WhatWeDo />
-          {/* <Solutions /> */}
+          <Solutions />
           {/* <Pricing /> */}
           <FAQ /> 
         </main>
