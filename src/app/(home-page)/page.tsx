@@ -7,6 +7,7 @@ import WhatWeDo from '@/components/sections/WhatWeDo';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
 import Solutions from '@/components/sections/Solutions';
+import Pricing from '@/components/sections/Pricing';
 // import GridBackground from '@/components/GridBackground';
 
 const Page = () => {
@@ -18,7 +19,7 @@ const Page = () => {
           <AppFeature />
           <WhatWeDo />
           <Solutions />
-          {/* <Pricing /> */}
+          <Pricing />
           <FAQ /> 
         </main>
         <Footer />

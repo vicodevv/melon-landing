@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-[#212631] text-gray-300 py-16">
       <div className="container mx-auto px-4">
@@ -107,7 +108,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://linkedin.com" className="hover:text-white text-[#464D5C] transition-colors">
+                <Link href="https://www.linkedin.com/company/melonsolutions/" className="hover:text-white text-[#464D5C] transition-colors">
                   LinkedIn
                 </Link>
               </li>
@@ -117,7 +118,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://x.com" className="hover:text-white text-[#464D5C] transition-colors">
+                <Link href="https://x.com/melon__ng" className="hover:text-white text-[#464D5C] transition-colors">
                   X (Formerly Twitter)
                 </Link>
               </li>
@@ -127,7 +128,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-16 text-center">
-          <p className="text-[#464D5C]">2025 - MelonApp by Melon Data Services Ltd. All Rights Reserved</p>
+          <p className="text-[#464D5C]">{currentYear} - MelonApp by Melon Data Services Ltd. All Rights Reserved</p>
         </div>
       </div>
     </footer>

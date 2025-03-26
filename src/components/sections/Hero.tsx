@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   return (
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4 text-center md:px-6">
-              <h1 className="mx-auto max-w-4xl text-5xl font-regular tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
+              <h1 className="mx-auto max-w-4xl text-5xl font-regular tracking-tight text-gray-900 md:text-6xl lg:text-8xl">
                 Impact Measurement
                 <br />
                 Beyond Borders
