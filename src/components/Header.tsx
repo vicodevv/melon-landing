@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="border-b border-gray-100">
+    <header className="">
     <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-6">
       <Link href="/" className="flex items-center">
         <Image src="/images/melon-logo.svg" alt="Melon" width={131} height={25} className="w-auto" />

@@ -98,7 +98,7 @@ export default function WhatWeDo() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-white" ref={sectionRef}>
+    <div className="w-full min-h-screen" ref={sectionRef}>
       <div className="max-w-6xl mx-auto px-4 py-16">
         <motion.div
           className="text-center mb-12"
