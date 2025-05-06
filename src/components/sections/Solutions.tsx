@@ -178,6 +178,7 @@ export default function Solutions() {
                     animate={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
                   />
+                  
                 )}
               </motion.div>
             ))}
