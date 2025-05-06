@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useEffect } from 'react';
@@ -14,7 +15,7 @@ import { motion } from 'framer-motion';
 const Page = () => {
   // Smooth scroll functionality
   useEffect(() => {
-    const handleNavClick = (e) => {
+    const handleNavClick = (e: any) => {
       const href = e.currentTarget.getAttribute('href');
       if (href?.startsWith('#')) {
         e.preventDefault();
