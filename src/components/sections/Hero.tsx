@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               className="group relative overflow-hidden rounded-md bg-[#5B94E5] px-6 py-3 text-base font-medium text-white hover:bg-[#4A7ABF] transition-all duration-300"
             >
               <span className="relative z-10 flex items-center">
-                Book a demo
+                Sign up
                 <motion.span className="ml-2" initial={{ x: 0 }} whileHover={{ x: 5 }}>
                   <ArrowRight size={18} />
                 </motion.span>
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             </Link>
 
             <Link
-              href="/signin"
+              href="https://melon.ng/signin"
               className="group rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 transition-all duration-300"
             >
               <span className="flex items-center">

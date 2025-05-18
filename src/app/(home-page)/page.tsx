@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useEffect } from 'react';
@@ -13,48 +13,23 @@ import Pricing from '@/components/sections/Pricing';
 import { motion } from 'framer-motion';
 
 const Page = () => {
-  // Smooth scroll functionality
-  useEffect(() => {
-    const handleNavClick = (e: any) => {
-      const href = e.currentTarget.getAttribute('href');
-      if (href?.startsWith('#')) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth',
-          });
-        }
-      }
-    };
-
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(link => {
-      link.addEventListener('click', handleNavClick);
-    });
-
-    return () => {
-      navLinks.forEach(link => {
-        link.removeEventListener('click', handleNavClick);
-      });
-    };
-  }, []);
-
   return (
     <div className="grid-background min-h-screen">
       <Header />
       <main>
         <Hero />
+        <div id="product">
         <AppFeature />
+        </div>
         <WhatWeDo />
         <Solutions />
-        <Pricing />
-        <FAQ />
+        <div id="pricing">
+          <Pricing />
+        </div>
+        <div id="faq">
+          <FAQ />
+        </div>
         
-        {/* Floating CTA button */}
         <motion.div
           className="fixed bottom-8 right-8 z-50"
           initial={{ y: 100, opacity: 0 }}
@@ -65,7 +40,7 @@ const Page = () => {
             href="/demo" 
             className="flex items-center bg-[#5B94E5] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#4A7ABF] transition-colors"
           >
-            <span className="mr-2">Book a Demo</span>
+            <span className="mr-2">Sign up</span>
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
