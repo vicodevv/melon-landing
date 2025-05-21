@@ -4,7 +4,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
-import AppFeature from '@/components/sections/AppFeature';
 import WhatWeDo from '@/components/sections/WhatWeDo';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
@@ -18,9 +17,6 @@ const Page = () => {
       <Header />
       <main>
         <Hero />
-        <div id="product">
-        <AppFeature />
-        </div>
         <WhatWeDo />
         <Solutions />
         <div id="pricing">

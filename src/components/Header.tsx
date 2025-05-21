@@ -73,17 +73,17 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-transparent absolute top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-6">
         <Link href="/" className="flex items-center">
-          <Image src="/images/melon-logo.svg" alt="Melon" width={131} height={25} className="w-auto" />
+          <Image src="/images/melon-logo.svg" alt="Melon" width={131} height={25} className="w-auto filter brightness-0 invert" />
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8">
           {/* Enterprise dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
-              className={`cursor-pointer flex items-center text-gray-800 hover:text-blue-500 ${enterpriseOpen ? 'text-blue-500' : ''}`}
+              className={`cursor-pointer flex items-center text-white hover:text-white/80 ${enterpriseOpen ? 'text-white/80' : ''}`}
               onClick={() => setEnterpriseOpen(!enterpriseOpen)}
             >
               Enterprise
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
                       onMouseEnter={() => setActiveCategory(category)}
                     >
                       <div className="flex items-center justify-between">
-                        <span>{category}</span>
+                        <span className="text-gray-800">{category}</span>
                         <svg
                           className="w-4 h-4 text-gray-400"
                           fill="none"
@@ -149,38 +149,38 @@ const Header: React.FC = () => {
           
           <button 
             onClick={() => scrollToSection('product')}
-            className="cursor-pointer text-gray-800 hover:text-blue-500"
+            className="cursor-pointer text-white hover:text-white/80 flex items-center"
           >
             Product
           </button>
           
           <button 
             onClick={() => scrollToSection('pricing')}
-            className="cursor-pointer text-gray-800 hover:text-blue-500"
+            className="cursor-pointer text-white hover:text-white/80"
           >
             Pricing
           </button>
           
           <button
             onClick={() => scrollToSection('faq')}
-            className="cursor-pointer text-gray-800 hover:text-blue-500"
+            className="cursor-pointer text-white hover:text-white/80"
           >
             FAQ
           </button>
         </nav>
         
         <div className="flex items-center space-x-4">
-          <Link href="https://melon.ng/signin" className="hidden md:block text-gray-800 hover:text-blue-500">
-            Sign in
+          <Link href="https://melon.ng/signin" className="hidden md:block text-white hover:text-white/80">
+            Sign In
           </Link>
           <Link
             href="/demo"
-            className="rounded-md bg-[#5B94E5] px-4 py-2 text-sm font-medium text-white hover:bg-[#4A7ABF]"
+            className="rounded-md bg-black/60 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white hover:bg-black/70 border border-white/20"
           >
-            Sign up
+            Book a demo
           </Link>
           
-          <button className="md:hidden text-gray-800">
+          <button className="md:hidden text-white">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

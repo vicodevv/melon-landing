@@ -1,85 +1,155 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from "framer-motion"
-import { ChevronRight, ArrowRight } from "lucide-react"
 
 const Hero: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'overview' | 'reports' | 'portfolio' | 'messages' | 'trash'>('overview');
+
+  const tabImages = {
+    overview: '/images/dashboard-overview.jpg',
+    reports: '/images/dashboard-overview.jpg', 
+    portfolio: '/images/dashboard-overview.jpg',
+    messages: '/images/dashboard-overview.jpg',
+    trash: '/images/dashboard-overview.jpg',
+  };
+
+  // Tab configuration
+  const tabs: { id: 'overview' | 'reports' | 'portfolio' | 'messages' | 'trash'; label: string }[] = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'reports', label: 'Reports' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { id: 'messages', label: 'Messages' },
+    { id: 'trash', label: 'Trash' },
+  ];
+
   return (
-        <section className="py-16 md:py-24">
-        <div className="container relative z-10 mx-auto px-4 text-center md:px-6">
+    <section 
+      className="pt-24 pb-0 relative"
+      style={{
+        background: 'linear-gradient(135deg, #7aa6ea 10%, #5b92e5 40%, #6175d1 70%, #6659bc 90%)'
+      }}
+    >
+      <div className="container relative z-10 mx-auto px-4 text-center md:px-6 max-w-6xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <motion.h1
-            className="mx-auto max-w-4xl text-5xl font-regular tracking-tight text-gray-900 md:text-6xl lg:text-8xl"
+            className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.3 }}>
+            <motion.span 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              transition={{ duration: 1, delay: 0.3 }}
+              className="block"
+            >
               Impact Measurement
             </motion.span>
-            <br />
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-[#5B94E5] bg-clip-text"
+              className="block"
             >
               Beyond Borders
             </motion.span>
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-gray-600"
+            className="mx-auto mt-6 max-w-3xl text-lg md:text-xl text-white/90 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            We provide tools and services to help organizations optimize outcomes through effective data management.
+            We provide tools and services to help organizations optimize outcomes through
+            effective data management.
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+            className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
             <Link
               href="/demo"
-              className="group relative overflow-hidden rounded-md bg-[#5B94E5] px-6 py-3 text-base font-medium text-white hover:bg-[#4A7ABF] transition-all duration-300"
+              className="group relative overflow-hidden rounded-md bg-black/80 backdrop-blur-sm px-8 py-4 text-lg font-medium text-white hover:bg-black/90 transition-all duration-300 flex items-center"
             >
               <span className="relative z-10 flex items-center">
-                Sign up
-                <motion.span className="ml-2" initial={{ x: 0 }} whileHover={{ x: 5 }}>
-                  <ArrowRight size={18} />
-                </motion.span>
+                Book a demo
+                <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
               </span>
-              <motion.span
-                className="absolute inset-0 z-0 bg-blue-700 opacity-0"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
             </Link>
 
             <Link
               href="https://melon.ng/signin"
-              className="group rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 transition-all duration-300"
+              className="group rounded-md border-2 border-white/30 bg-white/20 backdrop-blur-sm px-8 py-4 text-lg font-medium text-white hover:bg-white/30 transition-all duration-300 flex items-center"
             >
               <span className="flex items-center">
                 Sign in
-                <motion.span
-                  className="ml-2 opacity-0 group-hover:opacity-100"
-                  initial={{ x: -5 }}
-                  whileHover={{ x: 0 }}
-                >
-                  <ChevronRight size={18} />
-                </motion.span>
+                <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
               </span>
             </Link>
           </motion.div>
+
+          <motion.div
+            className="relative mx-auto max-w-5xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="rounded-t-2xl bg-white shadow-2xl overflow-hidden">
+              <div className="aspect-video bg-gray-50 relative">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full h-full"
+                >
+                  <Image 
+                    src={tabImages[activeTab]} 
+                    alt={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Dashboard`}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-          </section>
+
+      {/* Tab navigation */}
+      <motion.div 
+        className="relative z-10 flex justify-center pb-8 pt-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+      >
+        <div className="inline-flex bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 cursor-pointer font-medium transition-all duration-200 ${
+                activeTab === tab.id 
+                  ? 'bg-gray-700 text-white' 
+                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
