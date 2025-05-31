@@ -30,10 +30,10 @@ const Hero: React.FC = () => {
         background: 'linear-gradient(135deg, #7aa6ea 10%, #5b92e5 40%, #6175d1 70%, #6659bc 90%)'
       }}
     >
-      <div className="container relative z-10 mx-auto px-4 text-center md:px-6 max-w-6xl">
+      <div className="container relative z-10 mx-auto px-6 text-center md:px-12 max-w-7xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <motion.h1
-            className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-white leading-tight mb-6"
+            className="mx-auto max-w-6xl text-6xl md:text-7xl lg:text-8xl font-[900px] tracking-tight text-white leading-[1.1] mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
               className="group relative overflow-hidden rounded-md bg-black/80 backdrop-blur-sm px-8 py-4 text-lg font-medium text-white hover:bg-black/90 transition-all duration-300 flex items-center"
             >
               <span className="relative z-10 flex items-center">
-                Book a demo
+                Sign Up
                 <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>

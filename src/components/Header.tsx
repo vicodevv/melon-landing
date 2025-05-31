@@ -177,7 +177,7 @@ const Header: React.FC = () => {
             href="/demo"
             className="rounded-md bg-black/60 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white hover:bg-black/70 border border-white/20"
           >
-            Book a demo
+            Sign Up
           </Link>
           
           <button className="md:hidden text-white">
