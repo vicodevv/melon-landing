@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
                   className="group relative overflow-hidden rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white hover:bg-gray-800 transition-all duration-300 flex items-center"
                 >
                   <span className="relative z-10 flex items-center">
-                    Book a demo
+                    Sign up
                     <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
