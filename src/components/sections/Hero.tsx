@@ -28,8 +28,6 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const updateDashboardPosition = () => {
       const vh = window.innerHeight;
-      // Calculate offset based on viewport height
-      // Smaller viewports need larger negative offset
       if (vh < 700) {
         setDashboardOffset('-180px');
       } else if (vh < 800) {
@@ -60,7 +58,7 @@ const Hero: React.FC = () => {
           <div className="container relative z-10 mx-auto text-center max-w-7xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1
-                className="mx-auto max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-4 sm:mb-6"
+                className="mx-auto max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,7 +82,7 @@ const Hero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-white/90 leading-relaxed font-normal px-4"
+                className="mx-auto mt-6 max-w-2xl text-lg text-white/90 leading-relaxed font-normal px-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -94,14 +92,14 @@ const Hero: React.FC = () => {
               </motion.p>
 
               <motion.div
-                className="mt-6 sm:mt-8 flex flex-col items-center justify-center space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0"
+                className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 <Link
                   href="/demo"
-                  className="group relative overflow-hidden rounded-lg bg-gray-900 px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-white hover:bg-gray-800 transition-all duration-300 flex items-center"
+                  className="group relative overflow-hidden rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white hover:bg-gray-800 transition-all duration-300 flex items-center"
                 >
                   <span className="relative z-10 flex items-center">
                     Book a demo
@@ -113,7 +111,7 @@ const Hero: React.FC = () => {
 
                 <Link
                   href="https://melon.ng/signin"
-                  className="group rounded-lg border-2 border-white/40 bg-transparent px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-white hover:bg-white/10 transition-all duration-300 flex items-center"
+                  className="group rounded-lg border-2 border-white/40 bg-transparent px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-all duration-300 flex items-center"
                 >
                   <span className="flex items-center">
                     Sign in
@@ -157,30 +155,32 @@ const Hero: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Tab navigation - separate section with white background */}
-      <section className="bg-white pt-32 sm:pt-48 md:pt-56 lg:pt-95 pb-8 sm:pb-12">
-        <motion.div 
-          className="flex justify-center px-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-        >
-          <div className="inline-flex bg-gray-100 rounded-lg overflow-hidden">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 cursor-pointer text-xs sm:text-sm font-medium transition-all duration-200 ${
-                  activeTab === tab.id 
-                    ? 'bg-gray-900 text-white' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </motion.div>
+      {/* Tab navigation - separate section with white background - CONSISTENT SPACING */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <div className="inline-flex bg-gray-100 rounded-lg overflow-hidden">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-6 py-3 text-sm font-medium transition-all duration-200 ${
+                    activeTab === tab.id 
+                      ? 'bg-gray-900 text-white' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </section>
     </>
   );

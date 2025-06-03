@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-"use client"
-
 import { useState, useRef, useEffect } from "react"
 import { ChevronRight, Globe, Search, BarChart2, LineChart } from "lucide-react"
 import { motion } from "framer-motion"
@@ -98,16 +95,16 @@ export default function WhatWeDo() {
   }
 
   return (
-    <div className="w-full min-h-screen" ref={sectionRef}>
-      <div className="max-w-6xl mx-auto px-4 py-16">
+    <section className="py-24 bg-white" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={titleVariants}
         >
-          <p className="text-gray-500 mb-2 uppercase tracking-wider font-medium">Enterprise</p>
-          <h1 className="text-5xl font-bold text-[#1c2331] relative inline-block">
+          <p className="text-gray-500 mb-4 uppercase tracking-wider font-medium text-sm">Enterprise</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#1c2331] relative inline-block">
             What we do
           </h1>
         </motion.div>
@@ -137,7 +134,7 @@ export default function WhatWeDo() {
           {services.map((service) => (
             <motion.div
               key={service.id}
-              className="cursor-pointer bg-white border border-gray-100 rounded-lg p-8 relative shadow-sm hover:shadow-lg transition-all duration-300 z-10"
+              className="cursor-pointer bg-white border border-gray-100 rounded-xl p-8 relative shadow-sm hover:shadow-lg transition-all duration-300 z-10"
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
               variants={cardVariants}
@@ -172,10 +169,10 @@ export default function WhatWeDo() {
                 )}
               </div>
 
-              <h3 className="text-2xl font-medium text-[#1c2331] mt-6 mb-3">{service.title}</h3>
+              <h3 className="text-2xl font-semibold text-[#1c2331] mt-6 mb-3">{service.title}</h3>
 
               <motion.p
-                className="text-gray-600 text-sm"
+                className="text-gray-600 text-sm leading-relaxed"
                 initial={{ opacity: 0, height: 0 }}
                 animate={hoveredCard === service.id ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
@@ -185,7 +182,7 @@ export default function WhatWeDo() {
 
               {hoveredCard === service.id && (
                 <motion.div
-                  className="absolute bottom-0 left-0 h-1 w-full"
+                  className="absolute bottom-0 left-0 h-1 w-full rounded-b-xl"
                   style={{ backgroundColor: service.color }}
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
@@ -196,7 +193,6 @@ export default function WhatWeDo() {
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
-
