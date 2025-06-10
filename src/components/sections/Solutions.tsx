@@ -58,7 +58,6 @@ export default function Solutions() {
     <section className="py-24 bg-gray-50" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
         
-        {/* First solution section - Text left, Image right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
           <motion.div 
             className="flex flex-col justify-center"
@@ -95,7 +94,6 @@ export default function Solutions() {
           </motion.div>
         </div>
 
-        {/* Second solution section - Image left, Text right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
           <motion.div 
             className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1"
@@ -126,12 +124,11 @@ export default function Solutions() {
               Mapping the Future, One Data Point at a Time
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Leverage AI-powered mapping to visualize disease patterns, market trends, and infrastructure gaps across Africa.
+              Leverage AI-powered mapping to visualize disease patterns, market trends, and infrastructure gaps.
             </p>
           </motion.div>
         </div>
 
-        {/* Third solution section - Text left, Image right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <motion.div 
             className="flex flex-col justify-center"
@@ -167,7 +164,6 @@ export default function Solutions() {
           </motion.div>
         </div>
 
-        {/* Call to action section */}
         <motion.div 
           className="text-center py-16 bg-white rounded-2xl shadow-sm"
           initial={{ opacity: 0, y: 20 }}
@@ -185,7 +181,7 @@ export default function Solutions() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Schedule a consultation
+            Let&rsquo;s get started
           </motion.button>
         </motion.div>
       </div>

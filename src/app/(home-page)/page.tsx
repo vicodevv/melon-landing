@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import Solutions from '@/components/sections/Solutions';
 import Pricing from '@/components/sections/Pricing';
 import { motion } from 'framer-motion';
+import { FeaturedBy } from '@/components/sections/FeaturedBy';
 
 const Page = () => {
   return (
@@ -17,6 +18,7 @@ const Page = () => {
       <Header />
       <main>
         <Hero />
+        <FeaturedBy />
         <WhatWeDo />
         <Solutions />
         <div id="pricing">
@@ -25,23 +27,6 @@ const Page = () => {
         <div id="faq">
           <FAQ />
         </div>
-        
-        <motion.div
-          className="fixed bottom-8 right-8 z-50"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          <a 
-            href="/demo" 
-            className="flex items-center bg-[#5B94E5] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#4A7ABF] transition-colors"
-          >
-            <span className="mr-2">Sign up</span>
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-        </motion.div>
       </main>
       
       <Footer />

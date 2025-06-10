@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from "framer-motion"
 
 const Hero: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'reports' | 'portfolio' | 'messages' | 'trash'>('overview');
-  const [dashboardOffset, setDashboardOffset] = useState('-250px');
 
   const tabImages = {
     overview: '/images/dashboard-overview.jpg',
@@ -24,37 +23,15 @@ const Hero: React.FC = () => {
     { id: 'trash', label: 'Trash' },
   ];
 
-  // Adjust dashboard position based on viewport height
-  useEffect(() => {
-    const updateDashboardPosition = () => {
-      const vh = window.innerHeight;
-      if (vh < 700) {
-        setDashboardOffset('-180px');
-      } else if (vh < 800) {
-        setDashboardOffset('-220px');
-      } else if (vh < 900) {
-        setDashboardOffset('-280px');
-      } else {
-        setDashboardOffset('-350px');
-      }
-    };
-
-    updateDashboardPosition();
-    window.addEventListener('resize', updateDashboardPosition);
-    return () => window.removeEventListener('resize', updateDashboardPosition);
-  }, []);
-
   return (
     <>
-      {/* Hero section with gradient background - full viewport height */}
       <section 
-        className="min-h-screen relative overflow-visible"
+        className="h-screen relative overflow-visible"
         style={{
           background: 'linear-gradient(135deg, #7aa6ea 10%, #5b92e5 40%, #6175d1 70%, #6659bc 90%)'
         }}
       >
-        {/* Content container - positioned in upper portion of viewport */}
-        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ paddingBottom: 'clamp(15vh, 25vh, 30vh)' }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pb-32">
           <div className="container relative z-10 mx-auto text-center max-w-7xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1
@@ -124,39 +101,40 @@ const Hero: React.FC = () => {
             </motion.div>
           </div>
         </div>
+      </section>
 
-        {/* Dashboard preview positioned at bottom of viewport, half visible */}
+      <div className="relative -mt-64 z-30">
         <motion.div
-          className="absolute left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] lg:w-full max-w-5xl px-4 sm:px-6"
-          style={{ bottom: dashboardOffset }}
+          className="w-full"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <div className="rounded-lg sm:rounded-xl lg:rounded-2xl bg-white shadow-xl lg:shadow-2xl overflow-hidden">
-            <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] bg-gray-50 relative">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-full"
-              >
-                <Image 
-                  src={tabImages[activeTab]} 
-                  alt={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Dashboard`}
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </motion.div>
+          <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+            <div className="rounded-lg sm:rounded-xl lg:rounded-2xl bg-white shadow-xl lg:shadow-2xl overflow-hidden">
+              <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] bg-gray-50 relative">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full h-full"
+                >
+                  <Image 
+                    src={tabImages[activeTab]} 
+                    alt={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Dashboard`}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>
-      </section>
+      </div>
 
-      {/* Tab navigation - separate section with white background - CONSISTENT SPACING */}
-      <section className="bg-white py-24">
+      <section className="bg-white pt-16 pb-24 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="flex justify-center"
