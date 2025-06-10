@@ -9,19 +9,27 @@ export default function FAQ() {
   const faqItems = [
     {
       question: "What is Melon?",
-      answer: "Melon is a powerful tool that helps organizations measure impact beyond reporting.",
+      answer: "Melon is a data technology company that helps organizations collect, analyze, and visualize project & field data, especially geospatial data to make faster, smarter decisions. We combine mobile data collection tools, geospatial analytics, and intuitive dashboards to power your insights.",
     },
     {
-      question: "Is Melon free for startups?",
-      answer: "Yes! Melon offers a free plan for startups to get started.",
+      question: "What types of organizations do you work with?",
+      answer: "We work with governments, development agencies, telecoms, energy companies, health programs, financial institutions, and more - any organization that needs accurate, location-based data to monitor projects, target interventions, or improve outcomes.",
     },
     {
-      question: "How does Melon work?",
-      answer: "Melon integrates with your existing workflow to provide real-time impact measurement and data management.",
+      question: "How do you collect data from the field?",
+      answer: "We deploy trained agents using our custom-built Galia by Melon mobile app. Our agents gather geotagged photos, surveys, and real-time observations even in remote or offline locations across Nigeria and beyond.",
     },
     {
-      question: "How can I get support?",
-      answer: "You can reach out to our support team via the contact page or email us at support@melon.com.",
+      question: "Can I visualize my data on a map or dashboard?",
+      answer: "Absolutely. Kajari by Melon offers interactive dashboards that show your data in real-time on maps, charts, and tables customized to your needs. You can filter by location, date, agent, and more.",
+    },
+    {
+      question: "Where do you operate?",
+      answer: "Melon operates across all 36 states of Nigeria, with a growing presence in Ghana and other West African countries. We can mobilize data agents nationwide within 48 hours.",
+    },
+    {
+      question: "How do I get started with Melon?",
+      answer: "Just reach out via our contact form or click the signup button. We'll schedule a brief discovery call to understand your needs and show you how Melon can support your project.",
     },
   ];
 
@@ -47,7 +55,7 @@ export default function FAQ() {
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 text-base leading-relaxed pt-2 pb-6">
-                  {item.answer || "Content goes here."}
+                  {item.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
